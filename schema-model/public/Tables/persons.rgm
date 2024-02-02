@@ -19,6 +19,9 @@ table "public"."persons" {
     column "state" {
       type = character varying(300)
     }
+    column "pin" {
+      type = character varying(50)
+    }
   )
 }
 
