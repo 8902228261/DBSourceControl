@@ -1,0 +1,24 @@
+table "public"."persons" {
+  owner = pgmain
+  columns = (
+    column "personid" {
+      type = integer
+    }
+    column "lastname" {
+      type = character varying(255)
+    }
+    column "firstname" {
+      type = character varying(255)
+    }
+    column "address" {
+      type = character varying(255)
+    }
+    column "city" {
+      type = character varying(255)
+    }
+    column "state" {
+      type = character varying(300)
+    }
+  )
+}
+

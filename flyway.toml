@@ -1,0 +1,37 @@
+databaseType = "PostgreSql"
+id = "db99f137-7ce4-4239-9bea-8be982addffa"
+name = "FlywayTest1"
+
+[flyway]
+locations = [ "filesystem:migrations" ]
+mixed = true
+outOfOrder = true
+validateMigrationNaming = true
+
+  [flyway.check]
+  majorTolerance = 0
+
+[flywayDesktop]
+developmentEnvironment = "development"
+schemaModel = "schema-model"
+shadowEnvironment = "shadow"
+
+  [flywayDesktop.generate]
+  undoScripts = true
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[environments.development]
+url = "jdbc:postgresql://pgsrv01.gsl.in:5432/PGFY"
+schemas = [ "public" ]
+displayName = "Development database"
+
+[environments.shadow]
+url = "jdbc:postgresql://pgsrv01.gsl.in:5432/PGFY_Shadow"
+schemas = [ "public" ]
+displayName = "Shadow database"
+provisioner = "clean"
